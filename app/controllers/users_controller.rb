@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.order(created_at: :desc)  end
+  end
   
   def new
     @user = User.new
@@ -23,9 +23,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.save
-        redirect_to current_user_path 
+      flash[:success] = "updated"
+      redirect_to current_user_path 
     else
-      render 'new'
+      render 'edit'
     end
   end
   

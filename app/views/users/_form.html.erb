@@ -1,11 +1,3 @@
-<!--
-CHECK: DO we need a partial template??? 
--->
-
-<h1>EditProfile</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       
@@ -27,5 +19,3 @@ CHECK: DO we need a partial template???
 
       <%= f.submit "Update", class: "btn btn-large btn-primary" %>
     <% end %>
-  </div>
-</div>

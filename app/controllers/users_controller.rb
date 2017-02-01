@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def show
     @user = User.find(params[:id])
@@ -23,16 +23,14 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = current_user(user_params)
+    @user = current_user
     if @user.save
       flash[:success] = "updated"
       redirect_to current_user_path 
-      #redirect_to root_path , notice: 'メッセージを編集しました'
     else
       render 'edit'
     end
   end
-  
 
   private
 

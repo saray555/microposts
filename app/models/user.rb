@@ -9,11 +9,13 @@ class User < ActiveRecord::Base
                        length: { minimum: 2, maximum: 20 }
   validates :profile, allow_blank: true,  length: { maximum: 120 }
   has_secure_password
-  has_many :following_users, through: :following_relationships, source: :followed
+
   has_many :microposts
+
   has_many :following_relationships, class_name:  "Relationship",
                                      foreign_key: "follower_id",
                                      dependent:   :destroy
+  has_many :following_users, through: :following_relationships, source: :followed
   
   has_many :follower_relationships, class_name:  "Relationship",
                                     foreign_key: "followed_id",

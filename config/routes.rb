@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   patch  'users/:id', to: 'users#update'
   delete 'logout', to: 'sessions#destroy'
 
-  resources :users
+  resources :users do
+    member do
+      get :followings, :followers
+    end
+  end
   resources :microposts
   resources :relationships, only: [:create, :destroy]
 end

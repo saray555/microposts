@@ -1,7 +1,18 @@
 <h3><%= @title %></h3>
 
-<ul>
+<div class="row">
+
   <% @users.each do |user| %>
-   <li><%= link_to user.name, user %></li>
+    <section class="user_info">
+  <ul>
+      <h4>
+        <%= gravatar_for @user %>
+        <%= link_to user.name, user %>
+        
+        <%#= pluralize(user.microposts.count, "micropost" %>
+      </h4>
+  </ul>
+  </section>
   <% end %>
-</ul>
+
+</div>

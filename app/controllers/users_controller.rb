@@ -33,14 +33,14 @@ class UsersController < ApplicationController
   end
   
   def followings
-    @title = "Followings"
+    @title = "Followings List"
     @users = @user.following_users
     render 'show_follow'
   end
   
   def followers
-    @title = "Followers"
-    @users - @user.follower_users
+    @title = "Followers List"
+    @users = @user.follower_users
     render 'show_follow'
   end
 

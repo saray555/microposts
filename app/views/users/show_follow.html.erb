@@ -1,4 +1,8 @@
-<h3><%= @title %></h3>
+<h3 class="bs-callout bs-callout-info">
+  <%= @title %>
+</h3>
+
+<p><%= render 'link' %></p>
 
 <div class="row">
 
@@ -6,13 +10,17 @@
     <section class="user_info">
   <ul>
       <h4>
-        <%= gravatar_for @user %>
+        <%# 下記の [@user] はコントローラーで定義されている [def set_user ....  end]のことをさす。%> 
+        <%#= gravatar_for @user %> 
+        <%# 下記の [user] は上記 @usersをeachでループしているので、@usersの中の一人がuserとなる
+        ↓↓↓ つまりuserはフォロワー（フォローしてる人）一人一人のことをさす。%> 
+        <%= gravatar_for user %>
         <%= link_to user.name, user %>
         
-        <%#= pluralize(user.microposts.count, "micropost" %>
       </h4>
   </ul>
   </section>
   <% end %>
+
 
 </div>

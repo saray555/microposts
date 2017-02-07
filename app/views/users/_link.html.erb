@@ -1,3 +1,5 @@
 <p><%= link_to "ツイート", root_url %> | 
-<%= link_to "フォロー", followings_user_path(@user) %> | 
-<%= link_to "フォロワー", followers_user_path(@user) %></p>
+
+<%= link_to_unless_current "フォロー", followings_user_path(@user) %>|
+<%= link_to_unless_current "フォロワー", followers_user_path(@user) %>
+</p>

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  #get 'pages/index'
+
   get 'users/new'
+  get 'microposts/index'
 
   root to: 'static_pages#home'
   get    'signup', to: 'users#new'

@@ -3,9 +3,10 @@
 </h3>
 
 <p><%= render 'link' %></p>
+<%= paginate @users %>
 
 <div class="row">
-
+  
   <% @users.each do |user| %>
     <section class="user_info">
   <ul>

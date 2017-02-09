@@ -1,16 +1,31 @@
 ja:
   sessions:
     new:
+      log_in: ログイン
       email: E-mail
       password: パスワード
       submit: サインイン
       new_user: 新規ユーザー？
       sign_up_now: ユーザー登録
+  users:
+    new:
+      sign_up: ユーザー登録
+      name: 名前
+      email: E-mail
+      password: パスワード
+      password_confirmation: パスワード (確認)
+      create_my_account: アカウントを作成する
+  static_pages:
+    home:
+      welcome_message: Microposts へようこそ！
+      sign_up_now: ユーザー登録をしよう！
   activerecord:
     attributes:
       user:
         name: 名前
         email: E-mail
+        location: 場所
+        profile: プロフィール
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

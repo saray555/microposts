@@ -21,3 +21,14 @@
 
 en:
   hello: "Hello world"
+  sessions:
+    new:
+      log_in: Log in
+  users:
+    new:
+      sign_up: Sign Up
+      create_my_account: Create my account
+  static_pages:
+    home:
+      welcome_message: Welcome to the Microposts 
+      sign_up_now: Sign up now!
